@@ -12,14 +12,24 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head>
 <body>
     <div class="container">
+        <div class="text-center">
+            <h1 id="title-message">Days until next D&D session:</h1>
+        </div>
+        <input type="text" id="datepicker">
         <div class="die">
             <!-- <img src="./Images/test1.png" class="img-fluid" id="die-img"> -->
             <h2 id="die-number">20</h2>
         </div>
+        <div class="additional-message text-center hidden">
+            <p>Looks like Addison forgot to update the counter. You should go poke him.</p>
+        </div>
+        <footer></footer>
     </div>
 </body>
 </html>
