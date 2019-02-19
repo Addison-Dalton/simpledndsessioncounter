@@ -18,6 +18,15 @@ body{
     position: relative;
 }
 
+.menu-btn {
+    background: transparent;
+    border: none !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 .die {
     position: relative;
     background-image: url("./Images/test1.png");
