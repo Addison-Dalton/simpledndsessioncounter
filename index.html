@@ -41,9 +41,11 @@
                             </div>
                             <button id="setDatePasswordFormSubmit" type="submit" class="btn btn-primary">Submit</button>
                         </form>
-                        <div>
-                            <input type="text" id="datepicker" class="hidden" autocomplete="off">
-
+                        <div id="datepickerContainer" class="hidden">
+                            <input type="text" id="datepicker" autocomplete="off">
+                            <p>
+                                Currently set at: <span id="setDateMessage"></span>
+                            </p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -60,7 +62,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                <div class="die">
+                <div class="die mt-5">
                     <!-- <img src="./Images/test1.png" class="img-fluid" id="die-img"> -->
                     <h2 id="die-number"></h2>
                 </div>

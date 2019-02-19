@@ -5,8 +5,10 @@ $(document).ready( () => {
     var selectedDate;
     var selectedDateJSON;
     const password = 'dalton';
+    var passwordEnteredCorrectly = false;
 
     $datePicker = $('#datepicker');
+    $datepickerContainer = $('#datepickerContainer');
     $setDatePasswordForm = $('#setDatePasswordForm');
     $passwordInput = $('#passwordInput');
     $passwordIncorrect = $('#passwordIncorrect');
@@ -18,7 +20,9 @@ $(document).ready( () => {
     });
 
     $('#closeSetDateModal').on('click', function() {
-        $datePicker.addClass('hidden');
+        if (!passwordEnteredCorrectly) {
+            $datepickerContainer.addClass('hidden');
+        }
     });
 
     
@@ -46,7 +50,8 @@ $(document).ready( () => {
     function checkPassword(enteredPassword) {
         $passwordIncorrect.addClass('hidden');
         if (enteredPassword === password) {
-            $datePicker.toggleClass('hidden');
+            passwordEnteredCorrectly = true;
+            $datepickerContainer.toggleClass('hidden');
             $setDatePasswordForm.toggleClass('hidden');
         } else {
             $passwordIncorrect.removeClass('hidden');
@@ -66,6 +71,7 @@ $(document).ready( () => {
 
     function setDate() {
         $($dayNumberElem).text(dateDiff);
+        $('#setDateMessage').text(selectedDate.toDateString());
     }
 
     function updateSelectedDate() {
